@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Effects</title>
+    <!-- Adding jQuery To HTMl -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>jQuery Effects</h1>
+    <p>jQuery enables us to add effects on a web page. </p>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="4">jQuery Effect</th>
+            </tr>
+            <tr>
+                <th>Display Effect</th>
+                <th>Fading Effect</th>
+                <th>Sliding Effect</th>
+                <th>Other Effect</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>hide()</td>
+                <td>fadeIn()</td>
+                <td>slideDown()</td>
+                <td>animate()</td>
+            </tr>
+            <tr>
+                <td>show()</td>
+                <td>fadeOut()</td>
+                <td>slideUp()</td>
+                <td>delay()</td>
+            </tr>
+            <tr>
+                <td rowspan="2">toogle()</td>
+                <td>fadeToggle()</td>
+                <td>slideToggle()</td>
+            </tr>
+            <tr>
+                <td>fadeTo()</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="fadeIn">Fade In</button> 
+    <button id="fadeOut">Fade Out</button> 
+    <button id="fadeToggle">FadeToggle</button> 
+
+    <button class="animate">Animate</button>
+
+    <button id="delay">Delay</button>
+
+    <script>
+        $(function () {
+            $("table").css('marginLeft', 'auto', 'fontSize','20px')
+            $("table").css('marginRight', 'auto')
+            $("h1").css('background-color', 'teal')
+            $("h1").css('textAlign', 'center')
+            $("p").css('background-color', 'crimson')
+            $("p").css({'textAlign': 'center', 'color': 'white'})
+            $("table").css({ backgroundColor: 'pink', border: '1px solid black' })
+            $('th').css({ textAlign: 'center', border: '1px solid black' })
+            $('td').css({ textAlign: 'center', border: '1px solid black' })
+            $('button').css({ margin: '50px', border: '1px solid black', fontSize: '20px', })
+        })
+
+        $(
+            function() {
+            $("h1").click(function (){
+                $("p").toggle(2000);
+            })
+        })
+
+        $(
+            function() {
+            $("#fadeIn").click(function (){
+                $("table").fadeIn(2000);    
+            })
+            $("#fadeOut").click(function (){
+                $("table").fadeOut(2000);    
+            })
+            $("#fadeToggle").click(function (){
+                $("table").fadeToggle(2000);    
+            })
+        })
+
+        $(function () {
+        $(".animate").click(function () {
+          $("table").animate(
+            {
+              marginLeft: "100px",
+              backgroundColor: "khaki",
+              color: "teal",
+              opacity: "0.5",
+              border: "50% solid khaki"
+            },
+            1000
+          );
+        });
+      });
+
+      $(function(){
+            $('#delay').click(function(){
+                $('table').delay(3000).animate({marginLeft: "800px"})
+            })
+        })
+
+        
+    </script>
+</body>
+
+</html>
